@@ -1,3 +1,14 @@
+window.addEventListener("load",()=>{
+    var spinner = document.querySelector(".spinner");
+    var clockDiv = document.querySelector(".clock-div");
+    
+    setTimeout(()=>{
+        clockDiv.style.display = "flex";
+        spinner.style.display = "none";
+        clockDiv.style.opacity = "1";
+    }, Math.floor(Math.random()*999)+1000);
+})
+
 
 setInterval(() => {
     var current = new Date();

@@ -5,6 +5,17 @@
     box-sizing: border-box;
 }
 
+.spinner{
+    border: 10px solid rgba(255, 255, 255, 0.5);
+    height: 200px;
+    width: 200px;
+    border-left: 30px solid #03C23D;
+    border-radius: 50%;
+    animation: loading 0.8s linear infinite;
+    position: relative;
+    box-shadow: -40px 0px 500px 1px #03C23D, 40px 0px 500px 1px #3f3f3f ;
+}
+
 body{
     font-family: "Poppins", serif;
     height: 100vh;
@@ -16,6 +27,7 @@ body{
 }
 
 .clock-div{
+    opacity: 0;
     user-select: none;
     background: #1f1f1f;
     border: 1px solid #333;
@@ -23,7 +35,7 @@ body{
     height: 300px;
     padding: 30px;
     border-radius: 20px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 200px;
@@ -34,8 +46,6 @@ body{
 .clock-div::after {
     content: "";
     position: absolute;
-    height: 110%;
-    width: 105%;
     background: linear-gradient(90deg, #0D6BFB, #358FDE, #9914B8, #F7BD78);
     background-size: 500%;
     background-position: 0 50%;
@@ -102,5 +112,14 @@ body{
     }
     100%{
         background-position: 0 50%;
+    }
+}
+
+@keyframes loading {
+    from{
+        rotate: 0deg;
+    }
+    to{
+        rotate: 360deg;
     }
 }
